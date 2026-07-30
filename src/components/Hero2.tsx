@@ -57,14 +57,20 @@ export default function Hero2() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-[1.6rem] sm:text-3xl md:text-[2rem] lg:text-[2.4rem] xl:text-[2.8rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.18] lg:leading-[1.15] xl:leading-[1.12]">
-            {/* Line 1: always on its own line on lg+ */}
-            <span className="block">
-              Helping Businesses Grow Faster with
-            </span>
-            {/* Line 2: gradient highlight — sits cleanly below */}
+          <h1 className="text-[1.7rem] sm:text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] xl:text-[3rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.2] lg:leading-[1.16] xl:leading-[1.13]">
+            {/*
+              Semantic line breaks on lg+:
+              "Helping Businesses Grow Faster"   ← clean thought
+              "with AI, Automation & Custom"     ← "with" ties naturally to what follows
+              "Software and AI SEO"              ← closes the idea
+            */}
+            Helping Businesses Grow Faster
+            <br className="hidden lg:block" />
+            {' '}with{' '}
             <span className="bg-gradient-to-r from-blue-700 via-indigo-800 to-neutral-900 bg-clip-text text-transparent">
-              AI, Automation &amp; Custom Software and AI SEO
+              AI, Automation &amp; Custom
+              <br className="hidden lg:block" />
+              Software and AI SEO
             </span>
           </h1>
 
