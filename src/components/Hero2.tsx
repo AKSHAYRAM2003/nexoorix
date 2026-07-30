@@ -57,9 +57,13 @@ export default function Hero2() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-[38px] xl:text-[50px] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.14] lg:leading-[1.1]">
-            <span className="lg:whitespace-nowrap">Helping Businesses Grow</span> Faster with{' '}
-            <span className="bg-gradient-to-r from-blue-700 via-indigo-900 to-neutral-950 bg-clip-text text-transparent">
+          <h1 className="text-[1.6rem] sm:text-3xl md:text-[2rem] lg:text-[2.4rem] xl:text-[2.8rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.18] lg:leading-[1.15] xl:leading-[1.12]">
+            {/* Line 1: always on its own line on lg+ */}
+            <span className="block">
+              Helping Businesses Grow Faster with
+            </span>
+            {/* Line 2: gradient highlight — sits cleanly below */}
+            <span className="bg-gradient-to-r from-blue-700 via-indigo-800 to-neutral-900 bg-clip-text text-transparent">
               AI, Automation &amp; Custom Software and AI SEO
             </span>
           </h1>
