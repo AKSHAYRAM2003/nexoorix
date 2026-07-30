@@ -186,57 +186,57 @@ export default function Hero2() {
             {/* 5 Floating Glass Stat Cards - Staggered & Responsive without mobile clipping */}
 
             {/* Stat Card 1: AI Workflow Automation (Top Left) */}
-            <div className="animate-float-slow absolute top-1 sm:top-2 md:top-6 left-1 sm:left-2 md:left-4 z-20 flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-5 md:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md sm:shadow-lg md:shadow-xl shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-1rem)]">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shrink-0">
-                <Workflow className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+            <div className="animate-float-slow absolute top-1 sm:top-2 md:top-4 lg:top-6 left-1 sm:left-2 md:left-2 lg:left-4 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shrink-0">
+                <Workflow className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
               <div className="flex flex-col text-left pr-0.5 sm:pr-1">
-                <span className="text-[8.5px] sm:text-[9.5px] md:text-xs font-bold text-neutral-950 leading-tight">100+ AI Workflows</span>
-                <span className="text-[7.5px] sm:text-[8.5px] md:text-[10px] text-neutral-500 font-medium">Built for Business</span>
+                <span className="text-[8.5px] sm:text-[9px] lg:text-[11px] font-bold text-neutral-950 leading-tight">100+ AI Workflows</span>
+                <span className="text-[7.5px] sm:text-[8px] lg:text-[10px] text-neutral-500 font-medium">Built for Business</span>
               </div>
             </div>
 
-            {/* Stat Card 2: AI Agents 24/7 Execution (Top Right - Staggered vertically lower to prevent mobile overlap) */}
-            <div className="animate-float-delayed absolute top-11 sm:top-[4.2rem] md:top-20 right-1 sm:right-2 md:right-4 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-5 md:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md sm:shadow-lg md:shadow-xl shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-1rem)]">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100 shrink-0">
-                <Bot className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+            {/* Stat Card 2: AI Agents 24/7 Execution (Top Right) */}
+            <div className="animate-float-delayed absolute top-11 sm:top-[4rem] md:top-[5rem] lg:top-20 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100 shrink-0">
+                <Bot className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
               <div className="flex flex-col text-left pr-0.5 sm:pr-1">
-                <span className="text-[8.5px] sm:text-[9.5px] md:text-xs font-bold text-neutral-950 leading-tight">24/7 AI Agents</span>
-                <span className="text-[7.5px] sm:text-[8.5px] md:text-[10px] text-neutral-500 font-medium">Autonomous Ops</span>
+                <span className="text-[8.5px] sm:text-[9px] lg:text-[11px] font-bold text-neutral-950 leading-tight">24/7 AI Agents</span>
+                <span className="text-[7.5px] sm:text-[8px] lg:text-[10px] text-neutral-500 font-medium">Autonomous Ops</span>
               </div>
             </div>
 
             {/* Stat Card 3: Enterprise Ready (Middle Right) */}
-            <div className="animate-float-reverse absolute top-[44%] sm:top-[46%] md:top-1/3 right-1 sm:right-2 md:right-6 lg:right-8 z-20 flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-5 md:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md sm:shadow-lg md:shadow-xl shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-1rem)]">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 shrink-0">
-                <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+            <div className="animate-float-reverse absolute top-[42%] sm:top-[44%] md:top-[38%] lg:top-1/3 right-1 sm:right-2 md:right-2 lg:right-8 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 shrink-0">
+                <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
               <div className="flex flex-col text-left pr-0.5 sm:pr-1">
-                <span className="text-[8.5px] sm:text-[9.5px] md:text-xs font-bold text-neutral-950 leading-tight">99.9% Enterprise</span>
-                <span className="text-[7.5px] sm:text-[8.5px] md:text-[10px] text-neutral-500 font-medium">Auth • Security</span>
+                <span className="text-[8.5px] sm:text-[9px] lg:text-[11px] font-bold text-neutral-950 leading-tight">99.9% Enterprise</span>
+                <span className="text-[7.5px] sm:text-[8px] lg:text-[10px] text-neutral-500 font-medium">Auth • Security</span>
               </div>
             </div>
 
             {/* Stat Card 4: Custom Software (Middle Left) */}
-            <div className="animate-float-slow absolute bottom-14 sm:bottom-20 md:bottom-36 left-1 sm:left-2 md:left-4 lg:left-6 z-20 flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-5 md:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md sm:shadow-lg md:shadow-xl shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-1rem)]">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100 shrink-0">
-                <Layers className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+            <div className="animate-float-slow absolute bottom-14 sm:bottom-[4.5rem] md:bottom-[6rem] lg:bottom-36 left-1 sm:left-2 md:left-2 lg:left-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100 shrink-0">
+                <Layers className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
               <div className="flex flex-col text-left pr-0.5 sm:pr-1">
-                <span className="text-[8.5px] sm:text-[9.5px] md:text-xs font-bold text-neutral-950 leading-tight">50+ Custom Builds</span>
-                <span className="text-[7.5px] sm:text-[8.5px] md:text-[10px] text-neutral-500 font-medium">Scalable • Secure</span>
+                <span className="text-[8.5px] sm:text-[9px] lg:text-[11px] font-bold text-neutral-950 leading-tight">50+ Custom Builds</span>
+                <span className="text-[7.5px] sm:text-[8px] lg:text-[10px] text-neutral-500 font-medium">Scalable • Secure</span>
               </div>
             </div>
 
             {/* Stat Card 5: Industry Grade AI SEO (Bottom Right) */}
-            <div className="animate-float-delayed absolute bottom-1 sm:bottom-2 md:bottom-8 right-1 sm:right-2 md:right-4 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 md:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-5 md:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md sm:shadow-lg md:shadow-xl shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-1rem)]">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100 shrink-0">
-                <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+            <div className="animate-float-delayed absolute bottom-1 sm:bottom-2 md:bottom-4 lg:bottom-8 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100 shrink-0">
+                <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
               <div className="flex flex-col text-left pr-0.5 sm:pr-1">
-                <span className="text-[8.5px] sm:text-[9.5px] md:text-xs font-bold text-neutral-950 leading-tight">AI SEO &amp; Growth</span>
-                <span className="text-[7.5px] sm:text-[8.5px] md:text-[10px] text-neutral-500 font-medium">Data-Driven</span>
+                <span className="text-[8.5px] sm:text-[9px] lg:text-[11px] font-bold text-neutral-950 leading-tight">AI SEO &amp; Growth</span>
+                <span className="text-[7.5px] sm:text-[8px] lg:text-[10px] text-neutral-500 font-medium">Data-Driven</span>
               </div>
             </div>
 
