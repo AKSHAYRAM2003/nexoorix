@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMediaQuery } from '@/components/use-media-query';
 import MotionDrawer from '@/components/ui/motion-drawer';
+import gsap from 'gsap';
 
 interface NavbarProps {
   timelineRef?: React.RefObject<HTMLElement | null>;
@@ -12,9 +13,21 @@ interface NavbarProps {
 
 export default function Navbar({}: NavbarProps = {}) {
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const headerRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        headerRef.current,
+        { y: -80, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.1 }
+      );
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200/80 transition-colors">
+    <header ref={headerRef} className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200/80 transition-colors" style={{ opacity: 0 }}>
       <div className="w-full px-6 sm:px-10 py-2 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center group">

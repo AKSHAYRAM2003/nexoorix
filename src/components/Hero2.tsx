@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useRef, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import {
   ArrowRight,
@@ -10,6 +11,7 @@ import {
   ShieldCheck,
   Layers,
 } from 'lucide-react';
+import gsap from 'gsap';
 
 import { AvatarCircles } from './ui/avatar-circles';
 
@@ -33,8 +35,41 @@ const avatars = [
 ];
 
 export default function Hero2() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // 1. Stagger left text content elements (badge, h1, p, marquee, dual CTA)
+      tl.fromTo(
+        '.gsap-hero-left > *',
+        { y: 35, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, stagger: 0.1, delay: 0.3 }
+      );
+
+      // 2. Right showcase graphic image reveal
+      tl.fromTo(
+        '.gsap-hero-image',
+        { scale: 0.94, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: 'power2.out' },
+        '-=0.5'
+      );
+
+      // 3. Stagger floating glass stat cards pop-in
+      tl.fromTo(
+        '.gsap-stat-card',
+        { scale: 0.7, opacity: 0, y: 15 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'back.out(1.7)' },
+        '-=0.4'
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative w-full bg-white text-neutral-900 pt-2 sm:pt-4 pb-2 sm:pb-4 pl-4 sm:pl-8 md:pl-10 lg:pl-12 pr-4 sm:pr-8 md:pr-10 lg:pr-12 flex flex-col justify-start overflow-hidden">
+    <section ref={containerRef} className="relative w-full bg-white text-neutral-900 pt-2 sm:pt-4 pb-2 sm:pb-4 pl-4 sm:pl-8 md:pl-10 lg:pl-12 pr-4 sm:pr-8 md:pr-10 lg:pr-12 flex flex-col justify-start overflow-hidden">
       {/* 2. Soft Background Glow & Faint Grid Lines */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.06),rgba(255,255,255,0))] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
@@ -46,7 +81,7 @@ export default function Hero2() {
       {/* Main Hero Container - 2 columns on tablet (sm:) and desktop */}
       <div className="relative z-10 w-full max-w-[1440px] ml-auto mr-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
         {/* Left Side: Hierarchy, Copy, Dual CTA & Service Chips */}
-        <div className="flex flex-col items-start text-left space-y-3 sm:space-y-4 md:space-y-5 max-w-full sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-[720px] pt-2 pb-2">
+        <div className="gsap-hero-left flex flex-col items-start text-left space-y-3 sm:space-y-4 md:space-y-5 max-w-full sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-[720px] pt-2 pb-2">
           {/* Top Category Badge Pill */}
           <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 text-neutral-800 text-[10px] sm:text-xs font-semibold tracking-wide shadow-xs">
             <span className="flex h-2 w-2 relative">
@@ -64,10 +99,9 @@ export default function Hero2() {
             Gradient starts at "with" so the colour change never splits a line awkwardly.
           */}
           <h1 className="text-[1.55rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[1.85rem] xl:text-[2.2rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.22] lg:leading-[1.2] xl:leading-[1.18]">
-            Helping Businesses Grow Faster
-            <br className="hidden lg:block" />
+            Helping Businesses Grow Faster with{' '}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-700 to-blue-900 bg-clip-text text-transparent">
-              {' '}with AI, Automation &amp; Custom Software and AI SEO
+              AI, Automation &amp; Custom Software and AI SEO
             </span>
           </h1>
 
@@ -173,7 +207,7 @@ export default function Hero2() {
 
         {/* Right Side: Showcase Graphic */}
         <div className="relative w-full flex justify-center sm:justify-end items-center px-0">
-          <div className="relative w-full max-w-[340px] sm:max-w-[440px] md:max-w-[560px] lg:max-w-[660px] xl:max-w-[740px] aspect-[1086/1448] ml-auto mr-0 rounded-none border-none shadow-none bg-transparent overflow-visible">
+          <div className="gsap-hero-image relative w-full max-w-[340px] sm:max-w-[440px] md:max-w-[560px] lg:max-w-[660px] xl:max-w-[740px] aspect-[1086/1448] ml-auto mr-0 rounded-none border-none shadow-none bg-transparent overflow-visible">
             <Image
               src="/assets/iamges/hr2-bg.png"
               alt="Nexoorix Showcase Graphic"
@@ -186,7 +220,7 @@ export default function Hero2() {
             {/* 5 Floating Glass Stat Cards - Staggered & Responsive without mobile clipping */}
 
             {/* Stat Card 1: AI Workflow Automation (Top Left) */}
-            <div className="animate-float-slow absolute top-1 sm:top-2 md:top-4 lg:top-6 left-1 sm:left-2 md:left-2 lg:left-4 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+            <div className="gsap-stat-card animate-float-slow absolute top-1 sm:top-2 md:top-4 lg:top-6 left-1 sm:left-2 md:left-2 lg:left-4 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
               <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shrink-0">
                 <Workflow className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
@@ -197,7 +231,7 @@ export default function Hero2() {
             </div>
 
             {/* Stat Card 2: AI Agents 24/7 Execution (Top Right) */}
-            <div className="animate-float-delayed absolute top-11 sm:top-[4rem] md:top-[5rem] lg:top-20 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+            <div className="gsap-stat-card animate-float-delayed absolute top-11 sm:top-[4rem] md:top-[5rem] lg:top-20 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
               <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100 shrink-0">
                 <Bot className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
@@ -208,7 +242,7 @@ export default function Hero2() {
             </div>
 
             {/* Stat Card 3: Enterprise Ready (Middle Right) */}
-            <div className="animate-float-reverse absolute top-[42%] sm:top-[44%] md:top-[38%] lg:top-1/3 right-1 sm:right-2 md:right-2 lg:right-8 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+            <div className="gsap-stat-card animate-float-reverse absolute top-[42%] sm:top-[44%] md:top-[38%] lg:top-1/3 right-1 sm:right-2 md:right-2 lg:right-8 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
               <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 shrink-0">
                 <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
@@ -219,7 +253,7 @@ export default function Hero2() {
             </div>
 
             {/* Stat Card 4: Custom Software (Middle Left) */}
-            <div className="animate-float-slow absolute bottom-14 sm:bottom-[4.5rem] md:bottom-[6rem] lg:bottom-36 left-1 sm:left-2 md:left-2 lg:left-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+            <div className="gsap-stat-card animate-float-slow absolute bottom-14 sm:bottom-[4.5rem] md:bottom-[6rem] lg:bottom-36 left-1 sm:left-2 md:left-2 lg:left-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
               <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100 shrink-0">
                 <Layers className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
@@ -230,7 +264,7 @@ export default function Hero2() {
             </div>
 
             {/* Stat Card 5: Industry Grade AI SEO (Bottom Right) */}
-            <div className="animate-float-delayed absolute bottom-1 sm:bottom-2 md:bottom-4 lg:bottom-8 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
+            <div className="gsap-stat-card animate-float-delayed absolute bottom-1 sm:bottom-2 md:bottom-4 lg:bottom-8 right-1 sm:right-2 md:right-2 lg:right-6 z-20 flex items-center gap-1.5 sm:gap-2 lg:gap-3 px-2 py-1 sm:px-2.5 sm:py-1.5 lg:px-5 lg:py-2.5 rounded-full bg-white/95 border border-neutral-200/90 shadow-md shadow-slate-950/5 backdrop-blur-xl hover:scale-105 transition-all duration-300 select-none max-w-[calc(100%-0.5rem)]">
               <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100 shrink-0">
                 <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5" />
               </div>
