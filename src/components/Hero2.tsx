@@ -3,11 +3,9 @@
 import Image from 'next/image';
 import {
   ArrowRight,
-  Star,
   Workflow,
   Bot,
   Globe,
-  Smartphone,
   TrendingUp,
   ShieldCheck,
   Layers,
