@@ -57,20 +57,17 @@ export default function Hero2() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-[1.7rem] sm:text-[1.9rem] md:text-[2.1rem] lg:text-[2.5rem] xl:text-[3rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.2] lg:leading-[1.16] xl:leading-[1.13]">
-            {/*
-              Semantic line breaks on lg+:
-              "Helping Businesses Grow Faster"   ← clean thought
-              "with AI, Automation & Custom"     ← "with" ties naturally to what follows
-              "Software and AI SEO"              ← closes the idea
-            */}
+          {/*
+            Font sizes tuned so each line actually fits the ~50% column:
+            lg col ≈ 560px → lg:text-[1.65rem] ≈ 26px  ✓ "Helping Businesses Grow Faster" = ~476px
+            xl col ≈ 720px → xl:text-[2rem]    ≈ 32px  ✓ "Helping Businesses Grow Faster" = ~584px
+            Gradient starts at "with" so the colour change never splits a line awkwardly.
+          */}
+          <h1 className="text-[1.55rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[1.85rem] xl:text-[2.2rem] font-extrabold tracking-tight text-neutral-950 font-heading leading-[1.22] lg:leading-[1.2] xl:leading-[1.18]">
             Helping Businesses Grow Faster
             <br className="hidden lg:block" />
-            {' '}with{' '}
-            <span className="bg-gradient-to-r from-blue-700 via-indigo-800 to-neutral-900 bg-clip-text text-transparent">
-              AI, Automation &amp; Custom
-              <br className="hidden lg:block" />
-              Software and AI SEO
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-700 to-blue-900 bg-clip-text text-transparent">
+              {' '}with AI, Automation &amp; Custom Software and AI SEO
             </span>
           </h1>
 
