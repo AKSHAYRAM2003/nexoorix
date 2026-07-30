@@ -11,7 +11,7 @@ import {
   Layers,
 } from 'lucide-react';
 
-import { AvatarCircles } from '@/components/ui/avatar-circles';
+import { AvatarCircles } from './ui/avatar-circles';
 
 const avatars = [
   {
