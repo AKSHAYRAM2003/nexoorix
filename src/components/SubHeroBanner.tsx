@@ -3,41 +3,100 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function SubHeroBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Smooth fade & float up entrance animation
+      // 1. Badges reveal on scroll
       gsap.fromTo(
         '.gsap-subhero-badge',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: bannerRef.current,
+            start: 'top 82%',
+            toggleActions: 'play none none reverse',
+          },
+        }
       );
 
+      // 2. Main title reveal on scroll
       gsap.fromTo(
         '.gsap-subhero-title',
-        { y: 25, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.4 }
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.gsap-subhero-title',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
       );
 
+      // 3. Subtitle description reveal on scroll
       gsap.fromTo(
         '.gsap-subhero-desc',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.55 }
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.gsap-subhero-desc',
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
+          },
+        }
       );
 
+      // 4. Side graphics slide in on scroll
       gsap.fromTo(
         '.gsap-subhero-left-img',
-        { x: -30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 0.3 }
+        { x: -40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: bannerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
       );
 
       gsap.fromTo(
         '.gsap-subhero-right-img',
-        { x: 30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 0.3 }
+        { x: 40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: bannerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
       );
     }, bannerRef);
 
@@ -47,7 +106,7 @@ export default function SubHeroBanner() {
   return (
     <section
       ref={bannerRef}
-      className="relative w-full bg-white text-neutral-900 border-t border-neutral-100/80 py-14 sm:py-20 md:py-24 overflow-hidden"
+      className="relative w-full bg-white text-neutral-900 border-t border-neutral-100/80 py-14 sm:py-10 md:py-20 overflow-hidden"
     >
       {/* Background ambient subtle glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(240,244,255,0.6),rgba(255,255,255,0))] pointer-events-none" />
@@ -103,7 +162,7 @@ export default function SubHeroBanner() {
         </h2>
 
         {/* Subtitle / Business Description */}
-        <p className="gsap-subhero-desc text-xs sm:text-sm md:text-base text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal">
+        <p className="gsap-subhero-desc text-md sm:text-md md:text-base text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal">
           Nexoorix is built to help you automate operations in real time, convert leads into active growth, scale intelligent AI solutions with clarity, and amplify your brand&apos;s market presence.
         </p>
       </div>

@@ -12,8 +12,13 @@ import {
   Layers,
 } from 'lucide-react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { AvatarCircles } from './ui/avatar-circles';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const avatars = [
   {
@@ -45,7 +50,7 @@ export default function Hero2() {
       tl.fromTo(
         '.gsap-hero-left > *',
         { y: 35, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, stagger: 0.1, delay: 0.3 }
+        { y: 0, opacity: 1, duration: 0.7, stagger: 0.1, delay: 0.2 }
       );
 
       // 2. Right showcase graphic image reveal
@@ -53,16 +58,30 @@ export default function Hero2() {
         '.gsap-hero-image',
         { scale: 0.94, opacity: 0 },
         { scale: 1, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        '-=0.5'
-      );
-
-      // 3. Stagger floating glass stat cards pop-in
-      tl.fromTo(
-        '.gsap-stat-card',
-        { scale: 0.7, opacity: 0, y: 15 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'back.out(1.7)' },
         '-=0.4'
       );
+
+      // 3. Stat card pills animate one by one on scroll via ScrollTrigger
+      const cards = gsap.utils.toArray('.gsap-stat-card');
+      cards.forEach((card: any, index: number) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 30, scale: 0.8, x: index % 2 === 0 ? -20 : 20 },
+          {
+            opacity: 1,
+            y: 0,
+            x: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      });
     }, containerRef);
 
     return () => ctx.revert();
