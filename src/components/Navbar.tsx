@@ -28,7 +28,7 @@ export default function Navbar({}: NavbarProps = {}) {
 
   return (
     <header ref={headerRef} className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200/80 transition-colors" style={{ opacity: 0 }}>
-      <div className="w-full px-6 sm:px-10 py-2 flex items-center justify-between">
+      <div className="w-full px-3 sm:px-5 md:px-6 py-2 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center group">
           <Image
