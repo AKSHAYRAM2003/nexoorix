@@ -53,12 +53,12 @@ export default function SubHeroBanner() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(240,244,255,0.6),rgba(255,255,255,0))] pointer-events-none" />
 
       {/* Left Decorative Image Graphic */}
-      <div className="gsap-subhero-left-img absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-32 md:w-44 lg:w-52 pointer-events-none select-none z-10">
+      <div className="gsap-subhero-left-img absolute left-0 top-1/2 -translate-y-1/2 w-[54px] sm:w-[86px] md:w-[118px] lg:w-[139px] pointer-events-none select-none z-10">
         <Image
           src="/assets/iamges/sub-left1.png"
           alt="Nexoorix Decorative Left Accent"
-          width={884}
-          height={1036}
+          width={512}
+          height={835}
           className="w-full h-auto object-contain object-left"
           priority
         />
