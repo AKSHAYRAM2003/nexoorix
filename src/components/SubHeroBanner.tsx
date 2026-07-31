@@ -53,24 +53,24 @@ export default function SubHeroBanner() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(240,244,255,0.6),rgba(255,255,255,0))] pointer-events-none" />
 
       {/* Left Decorative Image Graphic */}
-      <div className="gsap-subhero-left-img absolute left-0 top-1/2 -translate-y-1/2 w-24 sm:w-36 md:w-48 lg:w-60 pointer-events-none select-none z-10 opacity-90 sm:opacity-100">
+      <div className="gsap-subhero-left-img absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-32 md:w-44 lg:w-52 pointer-events-none select-none z-10">
         <Image
           src="/assets/iamges/sub-left1.png"
           alt="Nexoorix Decorative Left Accent"
-          width={280}
-          height={280}
+          width={884}
+          height={1036}
           className="w-full h-auto object-contain object-left"
           priority
         />
       </div>
 
       {/* Right Decorative Image Graphic */}
-      <div className="gsap-subhero-right-img absolute right-0 top-1/2 -translate-y-1/2 w-24 sm:w-36 md:w-48 lg:w-60 pointer-events-none select-none z-10 opacity-90 sm:opacity-100">
+      <div className="gsap-subhero-right-img absolute right-0 top-1/2 -translate-y-1/2 w-20 sm:w-32 md:w-44 lg:w-52 pointer-events-none select-none z-10">
         <Image
           src="/assets/iamges/sub-right1.png"
           alt="Nexoorix Decorative Right Accent"
-          width={280}
-          height={280}
+          width={668}
+          height={733}
           className="w-full h-auto object-contain object-right"
           priority
         />
