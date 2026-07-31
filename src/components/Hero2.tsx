@@ -61,25 +61,35 @@ export default function Hero2() {
         '-=0.4'
       );
 
-      // 3. Stat card pills animate one by one on scroll via ScrollTrigger
+      // 3. Pinned Scroll-Driven Stat Card Pills Reveal (One-by-one on scroll)
       const cards = gsap.utils.toArray('.gsap-stat-card');
+
+      // Set initial hidden state for all cards
+      gsap.set(cards, { opacity: 0, y: 30, scale: 0.82 });
+
+      const cardTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: '+=100%',
+          scrub: 0.6,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
+
+      // Reveal cards one by one in sequence as user scrolls
       cards.forEach((card: any, index: number) => {
-        gsap.fromTo(
+        cardTl.to(
           card,
-          { opacity: 0, y: 30, scale: 0.8, x: index % 2 === 0 ? -20 : 20 },
           {
             opacity: 1,
             y: 0,
-            x: 0,
             scale: 1,
             duration: 0.6,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 88%',
-              toggleActions: 'play none none reverse',
-            },
-          }
+            ease: 'back.out(1.4)',
+          },
+          index === 0 ? 0 : '+=0.15'
         );
       });
     }, containerRef);
