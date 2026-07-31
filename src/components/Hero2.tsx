@@ -69,7 +69,7 @@ export default function Hero2() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full bg-white text-neutral-900 pt-2 sm:pt-4 pb-2 sm:pb-4 px-3 sm:px-5 md:px-6 flex flex-col justify-start overflow-hidden">
+    <section ref={containerRef} className="relative w-full bg-white text-neutral-900 pt-2 sm:pt-4 pb-2 sm:pb-4 pl-4 sm:pl-6 md:pl-8 pr-4 sm:pr-0 flex flex-col justify-start overflow-hidden">
       {/* 2. Soft Background Glow & Faint Grid Lines */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.06),rgba(255,255,255,0))] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
