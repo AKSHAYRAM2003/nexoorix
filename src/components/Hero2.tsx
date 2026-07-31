@@ -61,37 +61,13 @@ export default function Hero2() {
         '-=0.4'
       );
 
-      // 3. Pinned Scroll-Driven Stat Card Pills Reveal (One-by-one on scroll)
-      const cards = gsap.utils.toArray('.gsap-stat-card');
-
-      // Set initial hidden state for all cards
-      gsap.set(cards, { opacity: 0, y: 30, scale: 0.82 });
-
-      const cardTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: '+=100%',
-          scrub: 0.6,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
-
-      // Reveal cards one by one in sequence as user scrolls
-      cards.forEach((card: any, index: number) => {
-        cardTl.to(
-          card,
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: 'back.out(1.4)',
-          },
-          index === 0 ? 0 : '+=0.15'
-        );
-      });
+      // 3. Stagger floating glass stat cards pop-in on load
+      tl.fromTo(
+        '.gsap-stat-card',
+        { scale: 0.7, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'back.out(1.7)' },
+        '-=0.4'
+      );
     }, containerRef);
 
     return () => ctx.revert();
