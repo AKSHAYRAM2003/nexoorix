@@ -80,16 +80,16 @@ export default function SubHeroBanner() {
       <div className="relative z-20 max-w-4xl mx-auto px-6 sm:px-8 text-center flex flex-col items-center space-y-5 sm:space-y-6 md:space-y-7">
         {/* Uppercase Business Action Badges */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          <span className="gsap-subhero-badge px-3 sm:px-4 py-1.5 rounded-md bg-neutral-100/90 border border-neutral-200/60 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-3.5 sm:px-4.5 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
             AUTOMATE
           </span>
-          <span className="gsap-subhero-badge px-3 sm:px-4 py-1.5 rounded-md bg-neutral-100/90 border border-neutral-200/60 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-3.5 sm:px-4.5 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
             BUILD
           </span>
-          <span className="gsap-subhero-badge px-3 sm:px-4 py-1.5 rounded-md bg-neutral-100/90 border border-neutral-200/60 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-3.5 sm:px-4.5 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
             SCALE
           </span>
-          <span className="gsap-subhero-badge px-3 sm:px-4 py-1.5 rounded-md bg-neutral-100/90 border border-neutral-200/60 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-3.5 sm:px-4.5 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-2xs">
             AMPLIFY
           </span>
         </div>
