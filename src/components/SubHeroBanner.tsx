@@ -162,7 +162,7 @@ export default function SubHeroBanner() {
         </h2>
 
         {/* Subtitle / Business Description */}
-        <p className="gsap-subhero-desc text-md sm:text-md md:text-base text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal">
+        <p className="gsap-subhero-desc text-sm sm:text-md md:text-base text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal">
           Nexoorix is built to help you automate operations in real time, convert leads into active growth, scale intelligent AI solutions with clarity, and amplify your brand&apos;s market presence.
         </p>
       </div>

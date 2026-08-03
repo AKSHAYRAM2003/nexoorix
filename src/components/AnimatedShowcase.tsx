@@ -2,6 +2,7 @@
 
 import Hero2 from './Hero2';
 import SubHeroBanner from './SubHeroBanner';
+import AboutSection from './AboutSection';
 
 export default function AnimatedShowcase() {
   return (
@@ -11,6 +12,9 @@ export default function AnimatedShowcase() {
 
       {/* Sub Hero Section with Side Graphics & Business Value Prop */}
       <SubHeroBanner />
+
+      {/* About Us Elevator Pitch Section */}
+      <AboutSection />
     </div>
   );
 }
