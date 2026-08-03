@@ -356,70 +356,10 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* 2. Standalone Core Capabilities & Tagline Section */}
-      <section id="capabilities" className="relative w-full bg-white text-neutral-900 py-16 sm:py-24 overflow-hidden">
-
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 space-y-12 sm:space-y-16">
-          {/* Grid Section Title */}
-          <div className="flex items-center justify-between border-b border-neutral-200/80 pb-4">
-            <h3 className="text-xl sm:text-2xl font-semibold text-neutral-950 tracking-tight">
-              What We Excel At
-            </h3>
-            <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
-              Core Capabilities
-            </span>
-          </div>
-
-          {/* 4 Feature / Capability Cards Grid */}
-          <div className="gsap-about-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {capabilities.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`gsap-about-card group relative p-6 sm:p-7 rounded-2xl bg-gradient-to-br ${item.accentColor} bg-white border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between`}
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className={`p-3 rounded-xl border ${item.iconBg} transition-transform duration-300 group-hover:scale-110`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600 bg-neutral-100 px-2.5 py-1 rounded-full border border-neutral-200/70">
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    <div className="space-y-2 pt-1">
-                      <h4 className="text-base font-semibold text-neutral-950 group-hover:text-blue-600 transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Bottom Tagline Banner */}
-          <div className="gsap-about-highlight relative rounded-2xl bg-neutral-950 text-white p-6 sm:p-8 md:p-10 overflow-hidden shadow-xl text-center flex flex-col items-center justify-center space-y-3 border border-neutral-800">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.15),rgba(0,0,0,0))] pointer-events-none" />
-            <div className="absolute top-0 right-0 w-48 h-48 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl space-y-2">
-              <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest">
-                OUR PROMISE
-              </p>
-              <h3 className="text-base sm:text-lg md:text-xl font-medium tracking-tight text-neutral-100 leading-relaxed">
-                &ldquo;Helping businesses embrace AI, automation, and digital transformation with confidence.&rdquo;
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
     </>
   );
 }
+
+

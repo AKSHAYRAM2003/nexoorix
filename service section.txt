@@ -1,0 +1,158 @@
+I agree. **8 services is too much** for a homepage. Visitors won't read all of it, especially in a scroll-driven section. A homepage should communicate your core value quickly. You can always have a dedicated **Services** page with the full list.
+
+I'd consolidate everything into **5 strategic service pillars** that cover everything you offer.
+
+---
+
+# Section Heading
+
+### OUR SERVICES
+
+# AI-Powered Solutions Built for Business Growth
+
+From custom software to intelligent automation, we design and build digital solutions that help businesses streamline operations, improve customer experiences, and scale with confidence.
+
+---
+
+# 1. CUSTOM SOFTWARE
+
+**Badge**
+
+BUILD
+
+## Custom Software That Fits Your Business
+
+Every business has unique challenges. We build scalable web applications, SaaS platforms, and business systems designed around your workflows—not the other way around.
+
+### Solutions
+
+* Enterprise Web Applications
+* SaaS Products
+* Business Portals
+* API Integrations
+
+**CTA**
+
+Explore Software →
+
+---
+
+# 2. AI AUTOMATION
+
+**Badge**
+
+AUTOMATE
+
+## Replace Manual Work with Intelligent Automation
+
+Automate repetitive processes, connect your business tools, and streamline operations with AI-powered workflows that save time and reduce operational costs.
+
+### Solutions
+
+* Workflow Automation
+* CRM & ERP Integration
+* Document Processing
+* Process Optimization
+
+**CTA**
+
+Automate Your Business →
+
+---
+
+# 3. AI AGENTS & GENERATIVE AI
+
+**Badge**
+
+INTELLIGENCE
+
+## AI That Works Alongside Your Team
+
+From intelligent AI agents to custom GenAI applications, we build solutions that answer questions, automate decisions, generate content, and enhance customer experiences.
+
+### Solutions
+
+* AI Agents
+* AI Chatbots
+* RAG Knowledge Bases
+* Custom GenAI Applications
+
+**CTA**
+
+Build AI Solutions →
+
+---
+
+# 4. CLOUD & DATA
+
+**Badge**
+
+SCALE
+
+## Secure Infrastructure Built to Grow
+
+Launch with confidence using scalable cloud infrastructure, automated deployments, and real-time analytics that keep your applications reliable and your business informed.
+
+### Solutions
+
+* Cloud Infrastructure
+* DevOps & CI/CD
+* Monitoring & Security
+* Analytics Dashboards
+
+**CTA**
+
+Scale Your Platform →
+
+---
+
+# 5. DIGITAL GROWTH
+
+**Badge**
+
+GROW
+
+## Get Found. Convert More. Grow Faster.
+
+A great product deserves visibility. We help businesses attract qualified traffic and turn visitors into customers through modern SEO, AI Search Optimization, and conversion-focused digital experiences.
+
+### Solutions
+
+* SEO & AI SEO
+* Performance Optimization
+* Conversion Optimization
+* Digital Growth Strategy
+
+**CTA**
+
+Grow Your Business →
+
+---
+
+## Why this works
+
+These five services naturally group your capabilities:
+
+| Service                       | Covers                                                |
+| ----------------------------- | ----------------------------------------------------- |
+| **Custom Software**           | Web apps, SaaS, portals, APIs, product engineering    |
+| **AI Automation**             | Workflow automation, integrations, business processes |
+| **AI Agents & Generative AI** | AI agents, chatbots, RAG, LLM-powered applications    |
+| **Cloud & Data**              | DevOps, cloud, security, analytics, infrastructure    |
+| **Digital Growth**            | SEO, AI SEO, performance, conversion optimization     |
+
+This structure is easier for visitors to understand and still represents everything Nexoorix offers.
+
+### Suggested scroll order
+
+1. **Build** → Custom Software
+2. **Automate** → AI Automation
+3. **Intelligence** → AI Agents & GenAI
+4. **Scale** → Cloud & Data
+5. **Grow** → Digital Growth
+
+That sequence tells a complete story:
+
+**We build your product → automate your operations → add AI intelligence → scale your platform → grow your business.**
+
+It's concise, memorable, and positions Nexoorix as a partner that delivers end-to-end digital transformation rather than a collection of unrelated services.
