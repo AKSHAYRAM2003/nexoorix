@@ -183,40 +183,44 @@ export default function AboutSection() {
         }
       );
 
-      // 4. Stagger feature/capability cards
-      gsap.fromTo(
-        '.gsap-about-card',
-        { y: 35, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.gsap-about-grid',
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
+      // 4. Stagger feature/capability cards (if present)
+      if (document.querySelector('.gsap-about-card')) {
+        gsap.fromTo(
+          '.gsap-about-card',
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '.gsap-about-grid',
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      }
 
-      // 5. Quote banner reveal
-      gsap.fromTo(
-        '.gsap-about-highlight',
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.gsap-about-highlight',
-            start: 'top 90%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
+      // 5. Quote banner reveal (if present)
+      if (document.querySelector('.gsap-about-highlight')) {
+        gsap.fromTo(
+          '.gsap-about-highlight',
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '.gsap-about-highlight',
+              start: 'top 90%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();

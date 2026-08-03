@@ -4,6 +4,7 @@ import Hero2 from './Hero2';
 import SubHeroBanner from './SubHeroBanner';
 import AboutSection from './AboutSection';
 import ServicesSection from './ServicesSection';
+import GrowthLoopSection from './GrowthLoopSection';
 
 export default function AnimatedShowcase() {
   return (
@@ -19,6 +20,9 @@ export default function AnimatedShowcase() {
 
       {/* Scroll-Driven Services Showcase Section */}
       <ServicesSection />
+
+      {/* The Nexoorix Growth Loop / Flywheel Section */}
+      <GrowthLoopSection />
     </div>
   );
 }
