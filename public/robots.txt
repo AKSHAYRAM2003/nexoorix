@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://www.nexoorix.com/sitemap.xml
+Host: https://www.nexoorix.com
