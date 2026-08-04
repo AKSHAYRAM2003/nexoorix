@@ -23,7 +23,7 @@ const ppEditorial = localFont({
   display: "swap",
 });
 
-const SITE_URL = "https://nexoorix-lilac.vercel.app";
+const SITE_URL = "https://www.nexoorix.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

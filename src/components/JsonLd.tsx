@@ -1,4 +1,4 @@
-const SITE_URL = "https://nexoorix-lilac.vercel.app";
+const SITE_URL = "https://www.nexoorix.com";
 
 /**
  * JsonLd — Injects structured data into the document head.

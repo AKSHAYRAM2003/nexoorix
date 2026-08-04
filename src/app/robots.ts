@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://nexoorix-lilac.vercel.app";
+const SITE_URL = "https://www.nexoorix.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
