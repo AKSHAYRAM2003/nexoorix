@@ -23,7 +23,7 @@ const ppEditorial = localFont({
   display: "swap",
 });
 
-const SITE_URL = "https://www.nexoorix.com";
+const SITE_URL = "https://nexoorix.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

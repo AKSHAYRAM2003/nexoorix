@@ -1,4 +1,4 @@
-const SITE_URL = "https://www.nexoorix.com";
+const SITE_URL = "https://nexoorix.com";
 
 /**
  * JsonLd — Injects structured data into the document head.
