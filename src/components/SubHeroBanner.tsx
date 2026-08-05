@@ -14,7 +14,7 @@ export default function SubHeroBanner() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Badges reveal on scroll
+      // 1. Badges reveal on scroll (Staggered bounce entrance with reverse on scroll up)
       gsap.fromTo(
         '.gsap-subhero-badge',
         { y: 25, opacity: 0 },
@@ -26,37 +26,40 @@ export default function SubHeroBanner() {
           ease: 'back.out(1.5)',
           scrollTrigger: {
             trigger: bannerRef.current,
-            start: 'top 82%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // 2. Main title reveal on scroll
-      gsap.fromTo(
-        '.gsap-subhero-title',
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.gsap-subhero-title',
             start: 'top 85%',
             toggleActions: 'play none none reverse',
           },
         }
       );
 
-      // 3. Subtitle description reveal on scroll
+      // 2. Headline word-by-word blur reveal (with reverse on scroll up)
+      gsap.fromTo(
+        '.gsap-subhero-word',
+        { opacity: 0.15, filter: 'blur(4px)', y: 12 },
+        {
+          opacity: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          stagger: 0.10,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.gsap-subhero-headline',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+
+      // 3. Subtitle description blur & opacity reveal (with reverse on scroll up)
       gsap.fromTo(
         '.gsap-subhero-desc',
-        { y: 25, opacity: 0 },
+        { opacity: 0.15, filter: 'blur(4px)', y: 12 },
         {
-          y: 0,
           opacity: 1,
-          duration: 0.7,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 0.85,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.gsap-subhero-desc',
@@ -66,18 +69,18 @@ export default function SubHeroBanner() {
         }
       );
 
-      // 4. Side graphics slide in on scroll
+      // 4. Side graphics slide in on scroll (with reverse on scroll up)
       gsap.fromTo(
         '.gsap-subhero-left-img',
-        { x: -40, opacity: 0 },
+        { x: -60, opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.9,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: bannerRef.current,
-            start: 'top 85%',
+            start: 'top 82%',
             toggleActions: 'play none none reverse',
           },
         }
@@ -85,15 +88,15 @@ export default function SubHeroBanner() {
 
       gsap.fromTo(
         '.gsap-subhero-right-img',
-        { x: 40, opacity: 0 },
+        { x: 60, opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.9,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: bannerRef.current,
-            start: 'top 85%',
+            start: 'top 82%',
             toggleActions: 'play none none reverse',
           },
         }
@@ -106,12 +109,12 @@ export default function SubHeroBanner() {
   return (
     <section
       ref={bannerRef}
-      className="relative w-full bg-white text-neutral-900 border-t border-neutral-100/80 py-14 sm:py-10 md:py-20 overflow-hidden"
+      className="relative w-full bg-white text-neutral-900 pt-4 sm:pt-6 md:pt-10 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
     >
       {/* Background ambient subtle glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(240,244,255,0.6),rgba(255,255,255,0))] pointer-events-none" />
 
-      {/* Left Decorative Image Graphic - Scaled so individual block size matches right side perfectly */}
+      {/* Left Decorative Image Graphic */}
       <div className="gsap-subhero-left-img absolute left-0 top-1/2 -translate-y-1/2 hidden sm:block w-[48px] sm:w-[72px] md:w-[96px] lg:w-[128px] pointer-events-none select-none z-10">
         <Image
           src="/assets/iamges/sub-left1.png"
@@ -123,7 +126,7 @@ export default function SubHeroBanner() {
         />
       </div>
 
-      {/* Right Decorative Image Graphic - Scaled so individual block size matches left side perfectly */}
+      {/* Right Decorative Image Graphic */}
       <div className="gsap-subhero-right-img absolute right-0 top-1/2 -translate-y-1/2 hidden sm:block w-[72px] sm:w-[108px] md:w-[144px] lg:w-[192px] pointer-events-none select-none z-10">
         <Image
           src="/assets/iamges/sub-right1.png"
@@ -135,34 +138,48 @@ export default function SubHeroBanner() {
         />
       </div>
 
-      {/* Main Center Content Container - Constrained horizontal padding so content fits between side graphics */}
+      {/* Main Center Content Container */}
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-20 md:px-32 lg:px-44 text-center flex flex-col items-center space-y-4 sm:space-y-5 md:space-y-6">
         {/* Uppercase Business Action Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5">
-          <span className="gsap-subhero-badge px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
             AUTOMATE
           </span>
-          <span className="gsap-subhero-badge px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
             BUILD
           </span>
-          <span className="gsap-subhero-badge px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
             SCALE
           </span>
-          <span className="gsap-subhero-badge px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wider uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
             AMPLIFY
           </span>
         </div>
 
         {/* Central Core Headline */}
-        <h2 className="gsap-subhero-title text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight">
-          Every workflow is an{' '}
-          <span className="font-serif italic font-normal text-neutral-800">
+        <h2
+          className="gsap-subhero-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap items-baseline justify-center gap-x-[0.28em] select-none"
+          style={{ fontFamily: 'var(--font-grotesk-neue)' }}
+        >
+          {['Every', 'workflow', 'is', 'an'].map((word, idx) => (
+            <span
+              key={idx}
+              className="gsap-subhero-word inline-block align-baseline font-medium text-neutral-950 will-change-[transform,opacity,filter]"
+              style={{ fontFamily: 'var(--font-grotesk-neue)' }}
+            >
+              {word}
+            </span>
+          ))}
+          <span
+            className="gsap-subhero-word inline-block align-baseline font-normal italic text-neutral-900 will-change-[transform,opacity,filter]"
+            style={{ fontFamily: 'var(--font-pp-editorial)' }}
+          >
             opportunity
           </span>
         </h2>
 
         {/* Subtitle / Business Description */}
-        <p className="gsap-subhero-desc text-sm sm:text-md md:text-base text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal">
+        <p className="gsap-subhero-desc text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter]">
           Nexoorix is built to help you automate operations in real time, convert leads into active growth, scale intelligent AI solutions with clarity, and amplify your brand&apos;s market presence.
         </p>
       </div>
