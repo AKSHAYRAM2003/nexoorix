@@ -34,7 +34,7 @@ export default function Hero3() {
         ease: 'power2.inOut',
         onComplete: () => {
           setPhraseIndex((prev) => (prev + 1) % HERO_KEY_PHRASES.length);
-          
+
           // 2. GSAP Blur & Fade In In-Place (No vertical y shift)
           gsap.fromTo(
             keyphraseRef.current,
@@ -147,7 +147,7 @@ export default function Hero3() {
       {/* Main Center Content Container */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-8 md:px-14 lg:px-20 text-center flex flex-col items-center">
         <div className="gsap-hero3-center flex flex-col items-center text-center space-y-3.5 sm:space-y-4 md:space-y-5 max-w-3xl">
-          
+
           {/* Category Badge Pill */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] min-[360px]:text-[10px] sm:text-[11px] font-semibold tracking-[0.08em] min-[360px]:tracking-[0.14em] sm:tracking-[0.2em] uppercase shadow-2xs select-none max-w-full">
             <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 relative shrink-0">
@@ -157,22 +157,21 @@ export default function Hero3() {
             <span className="truncate">LET&apos;S BRING LIFE TO YOUR IDEA</span>
           </div>
 
-          {/* Central Core Headline: 100% Responsive for Mobile (< 425px) & Desktop */}
+          {/* Central Core Headline: Single-Line Main Sentence Across Desktop, Tablet & Mobile (<425px) */}
           <h1
-            className="text-[20px] min-[360px]:text-[22px] min-[400px]:text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5 px-2 sm:px-0"
+            className="text-[15px] min-[360px]:text-[17px] min-[400px]:text-[19px] sm:text-3xl md:text-[42px] lg:text-[48px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5 px-1 sm:px-0"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
-            {/* Line 1: On small mobile (< sm), Empowering businesses to scale fits without overflow. On sm+, single unbroken line with 'with' */}
+            {/* Line 1: Always in ONE single unbroken line across Desktop, Tablet & Mobile (<425px) */}
             <span
-              className="sm:whitespace-nowrap block font-medium text-neutral-950 tracking-tight text-center max-w-full"
+              className="whitespace-nowrap block font-medium text-neutral-950 tracking-tight text-center"
               style={{ fontFamily: 'var(--font-grotesk-neue)' }}
             >
-              Empowering businesses to scale <span className="hidden sm:inline">with</span>
+              Empowering businesses to scale with
             </span>
 
-            {/* Line 2: On small mobile (< sm), 'with' sits alongside keyphrase. On sm+, keyphrase only */}
-            <span className="block min-h-[1.3em] flex items-center justify-center flex-wrap gap-x-1.5 sm:gap-x-2">
-              <span className="sm:hidden font-medium text-neutral-950 tracking-tight">with</span>
+            {/* Line 2: Rotating Keyphrase centered directly underneath */}
+            <span className="block min-h-[1.3em] flex items-center justify-center">
               <span
                 ref={keyphraseRef}
                 className="inline-block font-normal italic align-baseline bg-gradient-to-r from-blue-600 via-emerald-500 via-amber-500 to-red-500 bg-clip-text text-transparent pr-2 sm:pr-3 py-0.5 will-change-[opacity,filter]"

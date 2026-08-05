@@ -301,25 +301,39 @@ export default function ServicesSection() {
           </div>
 
           <h2
-            className="gsap-services-headline text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-3xl mx-auto select-none"
+            className="gsap-services-headline text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-4xl mx-auto select-none flex flex-col items-center space-y-0.5 sm:space-y-1"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
-            <span className="block">
-              {['AI-powered', 'digital', 'solutions', 'built', 'for'].map((word, idx) => (
-              <span
-                key={idx}
-                  className="gsap-services-word inline-block font-medium text-neutral-950 mr-[0.28em] will-change-[transform,opacity,filter]"
-                style={{ fontFamily: 'var(--font-grotesk-neue)' }}
-              >
-                {word}
-              </span>
-            ))}
+            {/* Line 1: AI-powered digital solutions */}
+            <span className="flex flex-wrap items-baseline justify-center gap-x-[0.28em]">
+              {['AI-powered', 'digital', 'solutions'].map((word, idx) => (
+                <span
+                  key={idx}
+                  className="gsap-services-word inline-block font-medium text-neutral-950 will-change-[transform,opacity,filter]"
+                  style={{ fontFamily: 'var(--font-grotesk-neue)' }}
+                >
+                  {word}
+                </span>
+              ))}
             </span>
-            <span
-              className="gsap-services-word inline-block font-normal italic text-neutral-900 mt-1 will-change-[transform,opacity,filter]"
-              style={{ fontFamily: 'var(--font-pp-editorial)' }}
-            >
-              business growth
+
+            {/* Line 2: built for business growth */}
+            <span className="flex flex-wrap items-baseline justify-center gap-x-[0.28em]">
+              {['built', 'for'].map((word, idx) => (
+                <span
+                  key={idx}
+                  className="gsap-services-word inline-block font-medium text-neutral-950 will-change-[transform,opacity,filter]"
+                  style={{ fontFamily: 'var(--font-grotesk-neue)' }}
+                >
+                  {word}
+                </span>
+              ))}
+              <span
+                className="gsap-services-word inline-block font-normal italic text-neutral-900 will-change-[transform,opacity,filter] pr-2 py-0.5"
+                style={{ fontFamily: 'var(--font-pp-editorial)' }}
+              >
+                business growth
+              </span>
             </span>
           </h2>
 
