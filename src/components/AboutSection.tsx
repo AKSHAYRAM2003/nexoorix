@@ -83,7 +83,7 @@ export default function AboutSection() {
           scrollTrigger: {
             trigger: '.gsap-about-pill',
             start: ABOUT_ANIMATION_CONFIG.pillTriggerStart,
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -106,7 +106,7 @@ export default function AboutSection() {
           scrollTrigger: {
             trigger: '.gsap-about-headline',
             start: ABOUT_ANIMATION_CONFIG.headlineTriggerStart,
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -130,7 +130,7 @@ export default function AboutSection() {
             scrollTrigger: {
               trigger: para,
               start: 'top 88%',
-              toggleActions: 'play none none none',
+              toggleActions: 'play none none reverse',
             },
           }
         );
@@ -153,7 +153,7 @@ export default function AboutSection() {
           scrollTrigger: {
             trigger: '.gsap-about-btn',
             start: 'top 90%',
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -178,7 +178,7 @@ export default function AboutSection() {
           scrollTrigger: {
             trigger: '.gsap-about-banner',
             start: 'top 85%',
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -197,7 +197,7 @@ export default function AboutSection() {
             scrollTrigger: {
               trigger: '.gsap-about-grid',
               start: 'top 85%',
-              toggleActions: 'play none none none',
+              toggleActions: 'play none none reverse',
             },
           }
         );
@@ -216,7 +216,7 @@ export default function AboutSection() {
             scrollTrigger: {
               trigger: '.gsap-about-highlight',
               start: 'top 90%',
-              toggleActions: 'play none none none',
+              toggleActions: 'play none none reverse',
             },
           }
         );
@@ -259,29 +259,27 @@ export default function AboutSection() {
           <div className="gsap-about-header max-w-4xl mx-auto space-y-6">
             {/* Top Pill Badge (Centered & Animated) */}
             <div className="gsap-about-pill w-full flex justify-center">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 text-neutral-700 text-xs font-medium tracking-wide shadow-2xs">
-                <span className="text-[11px] font-semibold text-neutral-800 tracking-wide">
-                  About Us
-                </span>
+              <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+                ABOUT NEXOORIX
               </div>
             </div>
 
-            {/* Core Clean Headline (Font-medium & FK Grotesk Neue font-family explicitly assigned on word spans) */}
-            <h2 className="gsap-about-headline text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-medium tracking-tight text-neutral-950 leading-tight text-center max-w-3xl mx-auto flex flex-wrap justify-center gap-x-[0.28em] gap-y-2 select-none">
+            {/* Core Clean Headline */}
+            <h2 className="gsap-about-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-3xl mx-auto flex flex-wrap items-baseline justify-center gap-x-[0.28em] gap-y-1 select-none" style={{ fontFamily: 'var(--font-grotesk-neue)' }}>
               {['We', 'build', 'custom', 'software', '&', 'AI', 'workflows', 'that'].map((word, idx) => (
                 <span
                   key={idx}
-                  className="gsap-scroll-word inline-block font-medium text-neutral-950 will-change-[transform,opacity,filter]"
+                  className="gsap-scroll-word inline-block align-baseline font-medium text-neutral-950 will-change-[transform,opacity,filter]"
                   style={{ fontFamily: 'var(--font-grotesk-neue)', opacity: 0.15, filter: 'blur(4px)', transform: 'translateY(12px)' }}
                 >
                   {word}
                 </span>
               ))}
               <span
-                className="gsap-scroll-word inline-block font-serif italic font-normal text-neutral-800 will-change-[transform,opacity,filter]"
-                style={{ opacity: 0.15, filter: 'blur(4px)', transform: 'translateY(12px)' }}
+                className="gsap-scroll-word inline-block align-baseline font-normal italic text-neutral-900 will-change-[transform,opacity,filter]"
+                style={{ fontFamily: 'var(--font-pp-editorial)', opacity: 0.15, filter: 'blur(4px)', transform: 'translateY(12px)' }}
               >
-                scale your business.
+                scale your business
               </span>
             </h2>
 

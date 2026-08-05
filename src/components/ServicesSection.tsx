@@ -85,8 +85,8 @@ const services: ServiceItem[] = [
     id: 1,
     badge: 'BUILD',
     category: 'CUSTOM SOFTWARE',
-    title: 'Custom Software That Fits',
-    titleItalic: 'Your Business',
+    title: 'Custom software for',
+    titleItalic: 'your business',
     description:
       'Every business has unique challenges. We build scalable web applications, SaaS platforms, and business systems designed around your workflows—not the other way around.',
     subheading: 'Solutions',
@@ -103,8 +103,8 @@ const services: ServiceItem[] = [
     id: 2,
     badge: 'AUTOMATE',
     category: 'AI AUTOMATION',
-    title: 'Replace Manual Work with',
-    titleItalic: 'Intelligent Automation',
+    title: 'Smart workflows with',
+    titleItalic: 'intelligent automation',
     description:
       'Automate repetitive processes, connect your business tools, and streamline operations with AI-powered workflows that save time and reduce operational costs.',
     subheading: 'Solutions',
@@ -121,8 +121,8 @@ const services: ServiceItem[] = [
     id: 3,
     badge: 'INTELLIGENCE',
     category: 'AI AGENTS & GENERATIVE AI',
-    title: 'AI That Works Alongside',
-    titleItalic: 'Your Team',
+    title: 'Autonomous AI agents for',
+    titleItalic: 'your team',
     description:
       'From intelligent AI agents to custom GenAI applications, we build solutions that answer questions, automate decisions, generate content, and enhance customer experiences.',
     subheading: 'Solutions',
@@ -139,8 +139,8 @@ const services: ServiceItem[] = [
     id: 4,
     badge: 'SCALE',
     category: 'CLOUD & DATA',
-    title: 'Secure Infrastructure',
-    titleItalic: 'Built to Grow',
+    title: 'Secure cloud infrastructure',
+    titleItalic: 'built to scale',
     description:
       'Launch with confidence using scalable cloud infrastructure, automated deployments, and real-time analytics that keep your applications reliable and your business informed.',
     subheading: 'Solutions',
@@ -157,8 +157,8 @@ const services: ServiceItem[] = [
     id: 5,
     badge: 'GROW',
     category: 'DIGITAL GROWTH',
-    title: 'Get Found. Convert More.',
-    titleItalic: 'Grow Faster.',
+    title: 'Drive traffic and',
+    titleItalic: 'grow faster',
     description:
       'A great product deserves visibility. We help businesses attract qualified traffic and turn visitors into customers through modern SEO, AI Search Optimization, and conversion-focused digital experiences.',
     subheading: 'Solutions',
@@ -209,7 +209,7 @@ export default function ServicesSection() {
           scrollTrigger: {
             trigger: '.gsap-services-pill',
             start: SERVICES_ANIMATION_CONFIG.pillTriggerStart,
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -232,7 +232,7 @@ export default function ServicesSection() {
           scrollTrigger: {
             trigger: '.gsap-services-headline',
             start: SERVICES_ANIMATION_CONFIG.headlineTriggerStart,
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -254,7 +254,7 @@ export default function ServicesSection() {
           scrollTrigger: {
             trigger: '.gsap-services-para',
             start: 'top 88%',
-            toggleActions: 'play none none none',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -296,25 +296,31 @@ export default function ServicesSection() {
       {/* Section Header */}
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 pt-4 sm:pt-8 md:pt-6 pb-8 sm:pb-12">
         <div className="max-w-3xl mx-auto text-center space-y-3">
-          <div className="gsap-services-pill inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100/90 border border-neutral-200/80 text-neutral-700 text-xs font-medium tracking-wide">
-            <span className="text-[11px] font-medium text-neutral-800 uppercase tracking-widest">
-              OUR SERVICES
-            </span>
+          <div className="gsap-services-pill inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+            OUR SERVICES
           </div>
 
           <h2
-            className="gsap-services-headline text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap justify-center gap-x-[0.28em] gap-y-1 select-none"
+            className="gsap-services-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-3xl mx-auto select-none"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
-            {['AI-Powered', 'Solutions', 'Built', 'for', 'Business', 'Growth'].map((word, idx) => (
+            <span className="block">
+              {['AI-powered', 'digital', 'solutions', 'built', 'for'].map((word, idx) => (
               <span
                 key={idx}
-                className="gsap-services-word inline-block font-medium text-neutral-950 will-change-[transform,opacity,filter]"
+                  className="gsap-services-word inline-block font-medium text-neutral-950 mr-[0.28em] will-change-[transform,opacity,filter]"
                 style={{ fontFamily: 'var(--font-grotesk-neue)' }}
               >
                 {word}
               </span>
             ))}
+            </span>
+            <span
+              className="gsap-services-word inline-block font-normal italic text-neutral-900 mt-1 will-change-[transform,opacity,filter]"
+              style={{ fontFamily: 'var(--font-pp-editorial)' }}
+            >
+              business growth
+            </span>
           </h2>
 
           <p className="gsap-services-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter]">
@@ -367,7 +373,7 @@ export default function ServicesSection() {
         {/*  RIGHT PANEL — Scrollable 5 Service Cards                   */}
         {/* ---------------------------------------------------------- */}
         <div ref={rightPanelRef} className="w-full lg:w-[50%]">
-          <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
+          <div className="px-4 sm:px-6 lg:px-8 xl:px-10">
             {services.map((service, index) => (
               <div
                 key={service.id}
@@ -385,26 +391,29 @@ export default function ServicesSection() {
                   />
                 </div>
 
-                {/* Badge */}
-                <div className="mb-3">
-                  <span className="inline-block px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200/80 text-[10px] sm:text-[11px] font-medium tracking-[0.18em] text-neutral-700 uppercase">
+                {/* Badge matching main section pill badge */}
+                <div className="mb-3 sm:mb-4">
+                  <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
                     {service.badge}
                   </span>
                 </div>
 
-                {/* Headline with font-medium and font-serif italic span */}
+                {/* Headline in ONE single line (Prominent size, 100% optical baseline alignment) */}
                 <h3
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight mb-3"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight mb-3 flex flex-wrap items-baseline gap-x-2.5"
                   style={{ fontFamily: 'var(--font-grotesk-neue)' }}
                 >
-                  {service.title}{' '}
-                  <span className="font-serif italic font-normal text-neutral-800">
+                  <span className="align-baseline">{service.title}</span>
+                  <span
+                    className="font-normal italic text-neutral-900 align-baseline inline-block"
+                    style={{ fontFamily: 'var(--font-pp-editorial)' }}
+                  >
                     {service.titleItalic}
                   </span>
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-neutral-600 font-sans leading-relaxed mb-4 max-w-xl font-normal">
+                <p className="text-sm sm:text-base text-neutral-600 font-sans leading-relaxed max-w-xl font-normal mb-5">
                   {service.description}
                 </p>
 
