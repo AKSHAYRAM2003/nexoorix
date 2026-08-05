@@ -169,11 +169,11 @@ export default function GrowthLoopSection() {
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* ── Section Header ── */}
         <div className="max-w-3xl mx-auto text-center space-y-2.5 sm:space-y-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <div className="gsap-flywheel-pill inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+          <div className="gsap-flywheel-pill inline-flex items-center justify-center px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[11px] font-semibold tracking-[0.18em] uppercase shadow-2xs">
             HOW WE DELIVER VALUE
           </div>
           <h2
-            className="gsap-flywheel-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-4xl mx-auto select-none"
+            className="gsap-flywheel-headline text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-4xl mx-auto select-none"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
             <span className="block mb-1">
@@ -187,7 +187,7 @@ export default function GrowthLoopSection() {
                 </span>
               ))}
             </span>
-            <span className="inline-flex flex-wrap items-baseline justify-center gap-x-2.5">
+            <span className="inline-flex flex-wrap items-baseline justify-center gap-x-2 sm:gap-x-2.5">
               <span
                 className="gsap-flywheel-word inline-block align-baseline font-medium text-neutral-950 will-change-[transform,opacity,filter]"
                 style={{ fontFamily: 'var(--font-grotesk-neue)' }}
@@ -203,21 +203,15 @@ export default function GrowthLoopSection() {
             </span>
           </h2>
 
-          <p className="gsap-flywheel-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter]">
+          <p className="gsap-flywheel-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter] px-2 sm:px-0">
             Every solution we build strengthens the next, creating a continuous
             cycle of innovation, automation, and business growth.
           </p>
         </div>
 
-        {/* ── Flywheel Layout — Universal 3-Column Flywheel Across Mobile, Tablet & Desktop ── */}
+        {/* ── Flywheel Layout — Responsive Grid Across Mobile, Tablet & Desktop ── */}
         <div className="gsap-flywheel-layout relative max-w-[1280px] mx-auto px-1 sm:px-4">
-          {/* 
-            Universal: 3-column flywheel grid on all screens (Mobile, Tablet, Desktop)
-            Col 1: Top-left (Build) + Bottom-left (Grow)
-            Col 2: Center image with rotating arrows
-            Col 3: Top-right (Automate) + Bottom-right (Intelligence)
-          */}
-          <div className="grid grid-cols-[1fr_1.15fr_1fr] md:grid-cols-[1fr_1.1fr_1fr] lg:grid-cols-[1fr_1.3fr_1fr] gap-x-1 sm:gap-x-3 md:gap-x-4 lg:gap-x-8 items-center justify-items-center">
+          <div className="grid grid-cols-[1fr_1.1fr_1fr] sm:grid-cols-[1fr_1.15fr_1fr] md:grid-cols-[1fr_1.1fr_1fr] lg:grid-cols-[1fr_1.3fr_1fr] gap-x-1 sm:gap-x-3 md:gap-x-4 lg:gap-x-8 items-center justify-items-center">
 
             {/* ── Left Column Nodes ── */}
             <div className="flex flex-col items-center gap-6 sm:gap-10 md:gap-14 lg:gap-28 w-full">

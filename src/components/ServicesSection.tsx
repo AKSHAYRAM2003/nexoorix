@@ -294,14 +294,14 @@ export default function ServicesSection() {
       className="relative w-full bg-[#faf9f7] text-neutral-900 overflow-hidden border-t border-neutral-200/80"
     >
       {/* Section Header */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 pt-4 sm:pt-8 md:pt-6 pb-8 sm:pb-12">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-16 pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-12">
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <div className="gsap-services-pill inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
             OUR SERVICES
           </div>
 
           <h2
-            className="gsap-services-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-3xl mx-auto select-none"
+            className="gsap-services-headline text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight text-center max-w-3xl mx-auto select-none"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
             <span className="block">
@@ -323,7 +323,7 @@ export default function ServicesSection() {
             </span>
           </h2>
 
-          <p className="gsap-services-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter]">
+          <p className="gsap-services-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter] px-2 sm:px-0">
             From custom software to intelligent automation, we design and build
             digital solutions that help businesses streamline operations, improve
             customer experiences, and scale with confidence.
@@ -336,7 +336,7 @@ export default function ServicesSection() {
       {/* ============================================================ */}
       <div
         ref={scrollytellingRef}
-        className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row"
+        className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row border-t border-neutral-200/80"
       >
         {/* ---------------------------------------------------------- */}
         {/*  LEFT PANEL — Pinned by GSAP ScrollTrigger                  */}
@@ -378,10 +378,10 @@ export default function ServicesSection() {
               <div
                 key={service.id}
                 ref={(el) => { cardRefs.current[index] = el; }}
-                className="min-h-screen flex flex-col justify-center py-8"
+                className="py-10 sm:py-16 lg:min-h-screen flex flex-col justify-center border-b lg:border-b-0 border-neutral-200/70"
               >
                 {/* Mobile image — only visible on small screens */}
-                <div className="lg:hidden mb-6 rounded-2xl overflow-hidden aspect-[4/3] relative">
+                <div className="lg:hidden mb-5 rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] relative shadow-md">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -393,14 +393,14 @@ export default function ServicesSection() {
 
                 {/* Badge matching main section pill badge */}
                 <div className="mb-3 sm:mb-4">
-                  <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+                  <span className="inline-flex items-center justify-center px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[11px] font-semibold tracking-[0.18em] uppercase shadow-2xs">
                     {service.badge}
                   </span>
                 </div>
 
                 {/* Headline in ONE single line (Prominent size, 100% optical baseline alignment) */}
                 <h3
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight mb-3 flex flex-wrap items-baseline gap-x-2.5"
+                  className="text-xl sm:text-3xl md:text-4xl lg:text-[38px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight mb-2.5 flex flex-wrap items-baseline gap-x-2.5"
                   style={{ fontFamily: 'var(--font-grotesk-neue)' }}
                 >
                   <span className="align-baseline">{service.title}</span>

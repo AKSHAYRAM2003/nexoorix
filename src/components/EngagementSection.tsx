@@ -113,17 +113,17 @@ export default function EngagementSection() {
       style={{ minHeight: '480px' }}
     >
       {/* ─── Center Text Content ─── */}
-      <div className="relative z-20 flex flex-col items-center text-center px-6 sm:px-12 md:px-0 pt-16 sm:pt-20 pb-56 sm:pb-64 md:pb-72">
-        <div className="flex flex-col items-center gap-4 sm:gap-5 max-w-2xl">
+      <div className="relative z-20 flex flex-col items-center text-center px-4 sm:px-12 md:px-0 pt-10 sm:pt-20 pb-28 sm:pb-56 md:pb-72">
+        <div className="flex flex-col items-center gap-3.5 sm:gap-5 max-w-2xl">
 
           {/* Top Pill Badge */}
-          <div className="gsap-engagement-pill inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+          <div className="gsap-engagement-pill inline-flex items-center justify-center px-3.5 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase shadow-2xs max-w-full">
             AUTOMATE WORKFLOWS. DRIVE BUSINESS.
           </div>
 
           {/* Headline */}
           <h2
-            className="gsap-engagement-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap items-baseline justify-center gap-x-[0.28em] select-none"
+            className="gsap-engagement-headline text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap items-baseline justify-center gap-x-[0.28em] select-none"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
             {['Every', 'business', 'deserves', 'real'].map((word, idx) => (
@@ -144,7 +144,7 @@ export default function EngagementSection() {
           </h2>
 
           {/* Subtitle / Paragraph matching ServicesSection standard */}
-          <p className="gsap-engagement-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter]">
+          <p className="gsap-engagement-para text-sm sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto font-normal will-change-[transform,opacity,filter] px-2 sm:px-0">
             No more dead ends. No more lost opportunities. Nexoorix engages, converts, and automates every client interaction. Ready to reimagine your business for the AI age?
           </p>
 
@@ -152,7 +152,7 @@ export default function EngagementSection() {
           <div className="pt-1 sm:pt-2">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-xs sm:text-sm tracking-wide transition-all shadow-md hover:shadow-lg active:scale-95"
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-xs sm:text-sm tracking-wide transition-all shadow-md hover:shadow-lg active:scale-95"
             >
               Book a Personalized Demo
             </a>
@@ -164,7 +164,7 @@ export default function EngagementSection() {
       {/* ─── Left Pixel Grid — attached to bottom-left ─── */}
       <div
         className="gsap-engagement-left-img absolute bottom-0 left-0 pointer-events-none select-none z-10"
-        style={{ width: 'clamp(280px, 42vw, 560px)' }}
+        style={{ width: 'clamp(140px, 38vw, 560px)' }}
       >
         <Image
           src="/assets/iamges/b-left.png"
@@ -172,7 +172,7 @@ export default function EngagementSection() {
           width={900}
           height={680}
           className="w-full h-auto object-left-bottom"
-          sizes="(max-width: 640px) 280px, (max-width: 1024px) 40vw, 560px"
+          sizes="(max-width: 640px) 140px, (max-width: 1024px) 40vw, 560px"
           priority
         />
       </div>
@@ -180,7 +180,7 @@ export default function EngagementSection() {
       {/* ─── Right Pixel Grid — attached flush to right side line & bottom edge ─── */}
       <div
         className="gsap-engagement-right-img absolute bottom-0 right-0 pointer-events-none select-none z-10"
-        style={{ width: 'clamp(280px, 42vw, 560px)' }}
+        style={{ width: 'clamp(140px, 38vw, 560px)' }}
       >
         <Image
           src="/assets/iamges/b-right.png"
@@ -188,7 +188,7 @@ export default function EngagementSection() {
           width={900}
           height={680}
           className="w-full h-auto object-right-bottom"
-          sizes="(max-width: 640px) 280px, (max-width: 1024px) 40vw, 560px"
+          sizes="(max-width: 640px) 140px, (max-width: 1024px) 40vw, 560px"
           priority
         />
       </div>

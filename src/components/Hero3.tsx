@@ -149,32 +149,33 @@ export default function Hero3() {
         <div className="gsap-hero3-center flex flex-col items-center text-center space-y-3.5 sm:space-y-4 md:space-y-5 max-w-3xl">
           
           {/* Category Badge Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs select-none">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[9px] min-[360px]:text-[10px] sm:text-[11px] font-semibold tracking-[0.08em] min-[360px]:tracking-[0.14em] sm:tracking-[0.2em] uppercase shadow-2xs select-none max-w-full">
             <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-blue-600" />
             </span>
-            <span>LET&apos;S BRING LIFE TO YOUR IDEA</span>
+            <span className="truncate">LET&apos;S BRING LIFE TO YOUR IDEA</span>
           </div>
 
-          {/* Central Core Headline: Line 1 (Single Line) + Line 2 (Keyphrase) — Matching SubHeroBanner FK Grotesk Neue */}
+          {/* Central Core Headline: 100% Responsive for Mobile (< 425px) & Desktop */}
           <h1
-            className="text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5"
+            className="text-[20px] min-[360px]:text-[22px] min-[400px]:text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5 px-2 sm:px-0"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
-            {/* Line 1: Always in ONE single line across all screens */}
+            {/* Line 1: On small mobile (< sm), Empowering businesses to scale fits without overflow. On sm+, single unbroken line with 'with' */}
             <span
-              className="whitespace-nowrap block font-medium text-neutral-950 tracking-tight"
+              className="sm:whitespace-nowrap block font-medium text-neutral-950 tracking-tight text-center max-w-full"
               style={{ fontFamily: 'var(--font-grotesk-neue)' }}
             >
-              Empowering businesses to scale with
+              Empowering businesses to scale <span className="hidden sm:inline">with</span>
             </span>
 
-            {/* Line 2: Rotating Keyphrase centered underneath */}
-            <span className="block min-h-[1.3em] flex items-center justify-center">
+            {/* Line 2: On small mobile (< sm), 'with' sits alongside keyphrase. On sm+, keyphrase only */}
+            <span className="block min-h-[1.3em] flex items-center justify-center flex-wrap gap-x-1.5 sm:gap-x-2">
+              <span className="sm:hidden font-medium text-neutral-950 tracking-tight">with</span>
               <span
                 ref={keyphraseRef}
-                className="inline-block font-normal italic align-baseline bg-gradient-to-r from-blue-600 via-emerald-500 via-amber-500 to-red-500 bg-clip-text text-transparent pr-3 py-0.5 will-change-[opacity,filter]"
+                className="inline-block font-normal italic align-baseline bg-gradient-to-r from-blue-600 via-emerald-500 via-amber-500 to-red-500 bg-clip-text text-transparent pr-2 sm:pr-3 py-0.5 will-change-[opacity,filter]"
                 style={{ fontFamily: 'var(--font-pp-editorial)' }}
               >
                 {HERO_KEY_PHRASES[phraseIndex]}
@@ -183,23 +184,23 @@ export default function Hero3() {
           </h1>
 
           {/* Subtitle / Description */}
-          <p className="text-[13px] sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal px-1 sm:px-0">
+          <p className="text-[12px] min-[360px]:text-[13px] sm:text-base md:text-lg text-neutral-600 font-sans leading-relaxed max-w-2xl font-normal px-2 sm:px-0">
             We help startups, businesses, and enterprises automate workflows, build intelligent AI solutions, develop scalable software, create high-performance websites, and accelerate digital growth through data-driven marketing.
           </p>
 
           {/* Dual CTA Buttons */}
           <div className="pt-2 sm:pt-3 space-y-3.5 sm:space-y-4 w-full flex flex-col items-center">
-            <div className="flex flex-row items-center justify-center gap-2 sm:gap-3.5 w-auto">
+            <div className="flex flex-row items-center justify-center gap-2 sm:gap-3.5 w-auto max-w-full">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-1 sm:gap-2 px-3 py-1.5 sm:px-6 sm:py-3 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-[10px] sm:text-xs md:text-sm tracking-tight sm:tracking-wide transition-all shadow-sm hover:shadow-md active:scale-95 group text-center shrink-0"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-[11px] sm:text-xs md:text-sm tracking-tight sm:tracking-wide transition-all shadow-sm hover:shadow-md active:scale-95 group text-center shrink-0"
               >
                 <span>Book a Demo</span>
                 <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center px-3 py-1.5 sm:px-6 sm:py-3 rounded-full bg-white/95 hover:bg-neutral-100 text-neutral-800 border border-neutral-200/90 font-medium text-[10px] sm:text-xs md:text-sm transition-all active:scale-95 text-center shrink-0 shadow-2xs backdrop-blur-xl"
+                className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-white/95 hover:bg-neutral-100 text-neutral-800 border border-neutral-200/90 font-medium text-[11px] sm:text-xs md:text-sm transition-all active:scale-95 text-center shrink-0 shadow-2xs backdrop-blur-xl"
               >
                 View Portfolio
               </a>

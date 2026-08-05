@@ -283,8 +283,8 @@ export default function AboutSection() {
               </span>
             </h2>
 
-            {/* Narrative Paragraphs (Expanded Business Brief with text-justify & italic underlined keywords) */}
-            <div className="gsap-about-paragraphs space-y-5 text-neutral-600 text-base sm:text-lg font-sans leading-relaxed font-normal max-w-4xl pt-2 text-justify">
+            {/* Narrative Paragraphs */}
+            <div className="gsap-about-paragraphs space-y-4 sm:space-y-5 text-neutral-600 text-sm sm:text-base md:text-lg font-sans leading-relaxed font-normal max-w-4xl pt-2 text-left sm:text-justify">
               <p
                 className="gsap-about-para will-change-[transform,opacity,filter]"
                 style={{ opacity: 0.15, filter: 'blur(4px)', transform: 'translateY(16px)' }}
@@ -312,10 +312,10 @@ export default function AboutSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4 text-left">
+            <div className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-center sm:text-left">
               <a
                 href="#capabilities"
-                className="gsap-about-btn group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-neutral-950 text-white font-medium text-sm tracking-wide transition-all duration-300 hover:bg-neutral-800 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+                className="gsap-about-btn group relative inline-flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-full bg-neutral-950 text-white font-medium text-xs sm:text-sm tracking-wide transition-all duration-300 hover:bg-neutral-800 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Learn More About Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -323,10 +323,10 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Full-Width Featured Visual Showcase Banner Frame (Reference Bottom Image) */}
-          <div className="gsap-about-banner relative rounded-3xl overflow-hidden border border-neutral-200/90 shadow-xl bg-neutral-950 group">
+          {/* Full-Width Featured Visual Showcase Banner Frame */}
+          <div className="gsap-about-banner relative rounded-2xl sm:rounded-3xl overflow-hidden border border-neutral-200/90 shadow-lg sm:shadow-xl bg-neutral-950 group">
             {/* Banner Background Graphic / Image */}
-            <div className="relative w-full h-[320px] sm:h-[420px] md:h-[480px]">
+            <div className="relative w-full h-[220px] sm:h-[380px] md:h-[480px]">
               <Image
                 src="/assets/iamges/about-section-bg.png"
                 alt="Nexoorix Digital Innovation Engine Showcase"

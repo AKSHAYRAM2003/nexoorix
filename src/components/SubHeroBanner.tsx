@@ -139,26 +139,26 @@ export default function SubHeroBanner() {
       </div>
 
       {/* Main Center Content Container */}
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-20 md:px-32 lg:px-44 text-center flex flex-col items-center space-y-4 sm:space-y-5 md:space-y-6">
+      <div className="relative z-20 max-w-4xl mx-auto px-3 sm:px-12 md:px-24 lg:px-36 text-center flex flex-col items-center space-y-3.5 sm:space-y-5 md:space-y-6">
         {/* Uppercase Business Action Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2.5">
+          <span className="gsap-subhero-badge px-2 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[8.5px] min-[360px]:text-[9.5px] sm:text-[11px] font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase shadow-2xs">
             AUTOMATE
           </span>
-          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-2 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[8.5px] min-[360px]:text-[9.5px] sm:text-[11px] font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase shadow-2xs">
             BUILD
           </span>
-          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-2 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[8.5px] min-[360px]:text-[9.5px] sm:text-[11px] font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase shadow-2xs">
             SCALE
           </span>
-          <span className="gsap-subhero-badge px-4 py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase shadow-2xs">
+          <span className="gsap-subhero-badge px-2 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-neutral-100/90 border border-neutral-200/70 text-neutral-700 text-[8.5px] min-[360px]:text-[9.5px] sm:text-[11px] font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase shadow-2xs">
             AMPLIFY
           </span>
         </div>
 
         {/* Central Core Headline */}
         <h2
-          className="gsap-subhero-headline text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap items-baseline justify-center gap-x-[0.28em] select-none"
+          className="gsap-subhero-headline text-[19px] min-[360px]:text-xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight flex flex-wrap items-baseline justify-center gap-x-[0.28em] select-none"
           style={{ fontFamily: 'var(--font-grotesk-neue)' }}
         >
           {['Every', 'workflow', 'is', 'an'].map((word, idx) => (
