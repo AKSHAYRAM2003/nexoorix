@@ -109,6 +109,7 @@ export default function EngagementSection() {
   return (
     <section
       ref={sectionRef}
+      id="contact"
       className="relative w-full bg-white text-neutral-900 overflow-hidden"
       style={{ minHeight: '480px' }}
     >

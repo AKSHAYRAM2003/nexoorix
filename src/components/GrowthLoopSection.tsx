@@ -152,7 +152,7 @@ export default function GrowthLoopSection() {
   return (
     <section
       ref={sectionRef}
-      id="growth-loop"
+      id="work"
       className="relative w-full bg-[#faf9f7] text-neutral-900 py-10 sm:py-14 md:py-16 lg:py-24 overflow-hidden"
     >
       {/* Custom Keyframes for Smooth Arrow Rotation */}

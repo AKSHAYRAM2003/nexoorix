@@ -159,7 +159,7 @@ export default function Hero3() {
 
           {/* Central Core Headline: Single-Line Main Sentence Across Desktop, Tablet & Mobile (<425px) */}
           <h1
-            className="text-[15px] min-[360px]:text-[17px] min-[400px]:text-[19px] sm:text-3xl md:text-[42px] lg:text-[48px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5 px-1 sm:px-0"
+            className="text-[35px] min-[360px]:text-[17px] min-[400px]:text-[19px] sm:text-3xl md:text-[42px] lg:text-[48px] font-medium tracking-tight text-neutral-950 leading-snug sm:leading-tight max-w-5xl mx-auto select-none text-center flex flex-col items-center justify-center space-y-1 sm:space-y-1.5 px-1 sm:px-0"
             style={{ fontFamily: 'var(--font-grotesk-neue)' }}
           >
             {/* Line 1: Always in ONE single unbroken line across Desktop, Tablet & Mobile (<425px) */}

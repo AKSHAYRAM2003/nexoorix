@@ -290,7 +290,7 @@ export default function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      id="services"
+      id="solutions"
       className="relative w-full bg-[#faf9f7] text-neutral-900 overflow-hidden border-t border-neutral-200/80"
     >
       {/* Section Header */}
