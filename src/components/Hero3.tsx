@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import {
   ArrowRight,
+  ArrowUpRight,
 } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -192,17 +193,34 @@ export default function Hero3() {
             <div className="flex flex-row items-center justify-center gap-2 sm:gap-3.5 w-auto max-w-full">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-[11px] sm:text-xs md:text-sm tracking-tight sm:tracking-wide transition-all shadow-sm hover:shadow-md active:scale-95 group text-center shrink-0"
+                className="group inline-flex items-center gap-1 sm:gap-1.5 cursor-pointer select-none"
               >
-                <span>Book a Demo</span>
-                <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Left Pill Text Container */}
+                <div className="relative overflow-hidden inline-flex items-center justify-center px-3.5 py-1.5 min-[360px]:px-4 min-[360px]:py-2 sm:px-5 sm:py-2.5 rounded-full border border-neutral-950 text-neutral-950 font-semibold text-[11px] min-[360px]:text-xs sm:text-sm tracking-wider uppercase transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white">
+                  {/* Expanding Fill Circle Originating from Center Point */}
+                  <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+                  
+                  {/* Button Text */}
+                  <span className="relative z-10 font-semibold tracking-wider">
+                    Book a Demo
+                  </span>
+                </div>
+
+                {/* Separate Right Arrow Circle */}
+                <div className="relative overflow-hidden w-7 h-7 min-[360px]:w-8 min-[360px]:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-neutral-950 text-neutral-950 flex items-center justify-center transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white shrink-0">
+                  {/* Expanding Fill Circle Originating from Center Point */}
+                  <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+
+                  {/* Arrow Icon */}
+                  <ArrowUpRight className="relative z-10 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] " />
+                </div>
               </a>
-              <a
+              {/* <a
                 href="#services"
                 className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-white/95 hover:bg-neutral-100 text-neutral-800 border border-neutral-200/90 font-medium text-[11px] sm:text-xs md:text-sm transition-all active:scale-95 text-center shrink-0 shadow-2xs backdrop-blur-xl"
               >
                 View Portfolio
-              </a>
+              </a> */}
             </div>
           </div>
 

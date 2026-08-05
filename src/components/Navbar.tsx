@@ -4,7 +4,7 @@ import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMediaQuery } from '@/components/use-media-query';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 
@@ -12,13 +12,12 @@ interface NavbarProps {
   timelineRef?: React.RefObject<HTMLElement | null>;
 }
 
-// Navigation items array with Solutions before About, Dashboard removed
+// Navigation items array: Swapped About & Services (renamed from Solutions), Contact removed
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'Solutions', href: '#solutions' },
   { label: 'About', href: '#about' },
+  { label: 'Services', href: '#solutions' },
   { label: 'Work', href: '#work' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar({}: NavbarProps = {}) {
@@ -117,33 +116,61 @@ export default function Navbar({}: NavbarProps = {}) {
 
           {/* 2. Center Large Screen Navigation Links (1024px+) */}
           {!isMobileOrTablet && (
-            <nav className="hidden lg:flex items-center gap-7 lg:gap-9 text-sm lg:text-base font-medium text-neutral-600">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href, item.label);
-                  }}
-                  className={`relative py-1 transition-colors duration-200 hover:text-neutral-950 ${
-                    activeSection === item.label ? 'text-neutral-950 font-semibold' : ''
-                  }`}
-                >
-                  {item.label}
-                  {activeSection === item.label && (
-                    <motion.span
-                      layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-neutral-950 rounded-full"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+            <nav className="hidden lg:flex items-center gap-7 lg:gap-9 text-sm lg:text-base font-medium text-neutral-700">
+              {NAV_ITEMS.map((item) => {
+                const isActive = activeSection === item.label;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.href, item.label);
+                    }}
+                    className={`group relative inline-block py-1 transition-colors duration-200 ${
+                      isActive ? 'text-neutral-950 font-semibold cursor-default' : ''
+                    }`}
+                  >
+                    {/* Ochi Design Cascade Letter Roll Effect (Disabled on active link) */}
+                    <span className="relative inline-flex overflow-hidden">
+                      {item.label.split('').map((char, i) => (
+                        <span key={i} className="relative inline-block overflow-hidden">
+                          {/* Default Letter */}
+                          <span
+                            className={`inline-block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                              isActive ? '' : 'group-hover:-translate-y-full'
+                            } will-change-transform`}
+                            style={{ transitionDelay: isActive ? '0ms' : `${i * 30}ms` }}
+                          >
+                            {char === ' ' ? '\u00A0' : char}
+                          </span>
+
+                          {/* Hover Letter (Only rendered for inactive links) */}
+                          {!isActive && (
+                            <span
+                              className="absolute left-0 top-0 inline-block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-full group-hover:translate-y-0 text-neutral-950 font-semibold will-change-transform"
+                              style={{ transitionDelay: `${i * 30}ms` }}
+                            >
+                              {char === ' ' ? '\u00A0' : char}
+                            </span>
+                          )}
+                        </span>
+                      ))}
+                    </span>
+
+                    {/* Ochi Design Underline Effect */}
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-neutral-950 origin-left transition-transform duration-500 ease-in-out ${
+                        isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
                     />
-                  )}
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </nav>
           )}
 
-          {/* 3. Right Large Screen CTA Action Button (1024px+) */}
+          {/* 3. Right Large Screen Ochi-Style CTA Action Button (Compact Responsive Gap & Padding) */}
           {!isMobileOrTablet && (
             <div className="hidden lg:flex items-center gap-3">
               <a
@@ -152,10 +179,27 @@ export default function Navbar({}: NavbarProps = {}) {
                   e.preventDefault();
                   handleNavClick('#contact', 'Contact');
                 }}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-xs lg:text-sm font-semibold transition-all shadow-xs hover:shadow-md active:scale-95 group"
+                className="group inline-flex items-center gap-1 sm:gap-1.5 cursor-pointer select-none"
               >
-                <span>Book a Demo</span>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                {/* Left Pill Text Container */}
+                <div className="relative overflow-hidden inline-flex items-center justify-center px-3.5 py-1.5 min-[360px]:px-4 min-[360px]:py-2 lg:px-4.5 lg:py-2 rounded-full border border-neutral-950 text-neutral-950 font-semibold text-[11px] min-[360px]:text-xs sm:text-xs lg:text-sm tracking-wider uppercase transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white">
+                  {/* Expanding Fill Circle Originating from Center Point */}
+                  <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+                  
+                  {/* Button Text */}
+                  <span className="relative z-10 font-semibold tracking-wider">
+                    Contact Us
+                  </span>
+                </div>
+
+                {/* Separate Right Arrow Circle */}
+                <div className="relative overflow-hidden w-7 h-7 min-[360px]:w-8 min-[360px]:h-8 lg:w-9 lg:h-9 rounded-full border border-neutral-950 text-neutral-950 flex items-center justify-center transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white shrink-0">
+                  {/* Expanding Fill Circle Originating from Center Point */}
+                  <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+
+                  {/* Arrow Icon */}
+                  <ArrowUpRight className="relative z-10 w-3.5 h-3.5 lg:w-4 lg:h-4 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] " />
+                </div>
               </a>
             </div>
           )}
@@ -237,51 +281,87 @@ export default function Navbar({}: NavbarProps = {}) {
 
                 {/* Staggered Navigation Links */}
                 <nav className="py-6 space-y-1.5 sm:space-y-2">
-                  {NAV_ITEMS.map((item, idx) => (
-                    <motion.a
-                      key={item.label}
-                      href={item.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.05 * idx + 0.1, duration: 0.3 }}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item.href, item.label);
-                      }}
-                      className={`flex items-center justify-between px-4 py-3 sm:py-3.5 rounded-2xl text-base sm:text-lg font-medium transition-all duration-200 ${
-                        activeSection === item.label
-                          ? 'bg-neutral-900 text-white font-semibold shadow-xs'
-                          : 'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950'
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      {activeSection === item.label ? (
-                        <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                      ) : (
-                        <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 opacity-40 group-hover:opacity-100 transition-opacity" />
-                      )}
-                    </motion.a>
-                  ))}
+                  {NAV_ITEMS.map((item, idx) => {
+                    const isActive = activeSection === item.label;
+                    return (
+                      <motion.a
+                        key={item.label}
+                        href={item.href}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 * idx + 0.1, duration: 0.3 }}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavClick(item.href, item.label);
+                        }}
+                        className={`group flex items-center justify-between px-4 py-3 sm:py-3.5 rounded-2xl text-base sm:text-lg font-medium transition-all duration-200 ${
+                          isActive
+                            ? 'bg-neutral-900 text-white font-semibold shadow-xs cursor-default'
+                            : 'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950'
+                        }`}
+                      >
+                        <span className="relative inline-flex overflow-hidden">
+                          {item.label.split('').map((char, i) => (
+                            <span key={i} className="relative inline-block overflow-hidden">
+                              <span
+                                className={`inline-block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                                  isActive ? '' : 'group-hover:-translate-y-full'
+                                } will-change-transform`}
+                                style={{ transitionDelay: isActive ? '0ms' : `${i * 30}ms` }}
+                              >
+                                {char === ' ' ? '\u00A0' : char}
+                              </span>
+                              {!isActive && (
+                                <span
+                                  className="absolute left-0 top-0 inline-block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-full group-hover:translate-y-0 text-neutral-950 font-semibold will-change-transform"
+                                  style={{ transitionDelay: `${i * 30}ms` }}
+                                >
+                                  {char === ' ' ? '\u00A0' : char}
+                                </span>
+                              )}
+                            </span>
+                          ))}
+                        </span>
+                        {isActive ? (
+                          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                        ) : (
+                          <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 opacity-40 group-hover:opacity-100 transition-opacity" />
+                        )}
+                      </motion.a>
+                    );
+                  })}
                 </nav>
               </div>
 
-              {/* Bottom CTA & Business Badge inside Drawer */}
+              {/* Bottom Ochi-Style CTA inside Drawer (Compact Gap & Padding) */}
               <div className="pt-6 border-t border-neutral-100 space-y-4">
-                <div className="flex items-center gap-2 text-neutral-500 text-xs sm:text-sm font-medium px-1">
-                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
-                  <span>Empowering AI-Driven Businesses</span>
-                </div>
-
                 <a
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick('#contact', 'Contact');
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-3 sm:py-3.5 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-sm sm:text-base font-semibold shadow-sm transition-all active:scale-98 text-center"
+                  className="group w-full flex items-center justify-between gap-1.5 cursor-pointer select-none"
                 >
-                  <span>Book a Demo</span>
-                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  {/* Left Pill Text Container */}
+                  <div className="relative overflow-hidden flex-1 inline-flex items-center justify-center py-2.5 px-4 rounded-full border border-neutral-950 text-neutral-950 font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white">
+                    {/* Expanding Fill Circle Originating from Center Point */}
+                    <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+                    
+                    {/* Button Text */}
+                    <span className="relative z-10 font-semibold tracking-wider">
+                      Book a Demo
+                    </span>
+                  </div>
+
+                  {/* Separate Right Arrow Circle */}
+                  <div className="relative overflow-hidden w-9 h-9 sm:w-9.5 sm:h-9.5 rounded-full border border-neutral-950 text-neutral-950 flex items-center justify-center transition-colors duration-500 group-hover:border-neutral-950 group-hover:text-white shrink-0">
+                    {/* Expanding Fill Circle Originating from Center Point */}
+                    <span className="absolute inset-0 bg-neutral-950 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-center pointer-events-none" />
+
+                    {/* Arrow Icon */}
+                    <ArrowUpRight className="relative z-10 w-4 h-4 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:rotate-45" />
+                  </div>
                 </a>
               </div>
             </motion.aside>
